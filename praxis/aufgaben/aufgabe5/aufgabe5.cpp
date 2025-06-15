@@ -8,6 +8,14 @@
 // Liefert einen Nullpointer, wenn der Baum leer ist.
 Node* Node::min_node()
 {
-    // TODO
+   Node* n = this;
+   if(is_empty())
+   {
     return nullptr;
-}
+   }
+   while (!n->left->is_empty())
+   {
+    n = n->left;
+   }
+   return n;
+   }
